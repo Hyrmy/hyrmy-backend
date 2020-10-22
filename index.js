@@ -2,6 +2,8 @@ const app = require('./app') // varsinainen Express-sovellus
 const http = require('http')
 const config = require('./utils/config')
 const logger = require('./utils/logger')
+const express = require('express')
+
 app.use(express.static('build'))
 
 const server = http.createServer(app)
