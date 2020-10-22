@@ -18,12 +18,10 @@
     "react-scripts": "3.3.1"
   },
   "scripts": {
-    "start": "cross-env NODE_ENV=production node index.js",
-    "dev": "cross-env NODE_ENV=development nodemon index.js",
-    "test": "cross-env NODE_ENV=test jest --verbose --runInBand",
+    "start": "node index.js",
+    "dev": "nodemon index.js",
     "lint": "eslint .",
     "cypress:open": "cypress open",
-    "start:test": "cross-env NODE_ENV=test node index.js",
     "build:ui": "rm -rf build && cd ../hyrmy-frontend/ && npm run build --prod && cp -r build ../hyrmy-backend/",
     "deploy": "git push heroku master",
     "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push && npm run deploy"
