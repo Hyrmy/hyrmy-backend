@@ -30,6 +30,8 @@ eventsRouter.post('/', async (request, response) => {
   const event = new Event({
     title: body.title,
     info: body.info,
+    date: body.date,
+    time: body.time,
     user: user._id
   })
 
@@ -87,11 +89,9 @@ eventsRouter.put('/:id', async (request, response) => {
 
   const updatedEvent = {
     title: body.title,
-    author: body.author,
-    likes: body.likes === undefined ? 0 : body.likes,
-    url: body.url,
-    comments: body.comments,
-    date: new Date()
+    info: body.info,
+    date: body.date,
+    time: body.time
   }
 
   await Event.findByIdAndUpdate(request.params.id, updatedEvent, { new: true })

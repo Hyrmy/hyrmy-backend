@@ -7,11 +7,14 @@ const eventSchema = mongoose.Schema({
     required: true,
     minlength: 3
   },
-  info: String,
-  user: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User'
-  }
+    info: String,
+    time: String,
+    date: String,
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
+    }
+
 })
 
 eventSchema.set('toJSON', {

@@ -29,11 +29,11 @@ usersRouter.post('/', async (request, response) => {
   response.json(savedUser)
 })
 */
-usersRouter.get('/', async (request, response) => {
+/*usersRouter.get('/', async (request, response) => {
   const users = await User
     .find({}).populate('events', { title: 1, url: 1, likes: 1 })
   response.json(users.map(u => u.toJSON()))
-})
+})*/
 
 
 module.exports = usersRouter
