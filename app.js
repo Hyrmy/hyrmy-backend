@@ -4,6 +4,7 @@ require('express-async-errors')
 const app = express()
 const cors = require('cors')
 const eventsRouter = require('./controllers/events')
+const appliesRouter = require('./controllers/applies')
 const usersRouter = require('./controllers/users')
 const middleware = require('./utils/middleware')
 const loginRouter = require('./controllers/login')
@@ -29,13 +30,14 @@ app.use(middleware.tokenExtractor)
 app.use('/api/users', usersRouter)
 app.use('/api/events', eventsRouter)
 app.use('/api/login', loginRouter)
+app.use('/api/apply', appliesRouter)
 
 if (process.env.NODE_ENV === 'test') {
   const testingRouter = require('./controllers/testing')
   app.use('/api/testing', testingRouter)
 }
 
-app.use(middleware.unknownEndpoint)
+//app.use(middleware.unknownEndpoint)
 app.use(middleware.errorHandler)
 
 module.exports = app

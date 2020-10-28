@@ -9,12 +9,6 @@ eventsRouter.get('/', async (request, response) => {
   response.json(events.map(event => event.toJSON()))
 })
 
-
-eventsRouter.get('/testi', (request, response) => {
-  response.send('<h1>Hello Testi!</h1>')
-})
-
-
 eventsRouter.post('/', async (request, response) => {
   const body = request.body
 

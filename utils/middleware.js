@@ -25,7 +25,7 @@ const errorHandler = (error, request, response, next) => {
 
   next(error)
 }
-
+//Removes "bearer: " from token
 const tokenExtractor = (request, response, next) => {
 
   const authorization = request.get('authorization')
