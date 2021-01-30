@@ -4,7 +4,6 @@ const config = require('./utils/config')
 const logger = require('./utils/logger')
 const express = require('express')
 
-app.use(express.static('build'))
 
 const server = http.createServer(app)
 

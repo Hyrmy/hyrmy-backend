@@ -18,14 +18,13 @@ eventsRouter.post('/', async (request, response) => {
       error: 'token missing or invalid'
     })
   }
-  const user = await User.findById(decodedToken.id)
-
+    const user = await User.findById(decodedToken.id)
 
   const event = new Event({
     title: body.title,
     info: body.info,
-    date: body.date,
-    time: body.time,
+    startDate: body.startDate,
+    endDate: body.endDate,
     user: user._id
   })
 
@@ -84,7 +83,9 @@ eventsRouter.put('/:id', async (request, response) => {
   const updatedEvent = {
     title: body.title,
     info: body.info,
-    date: body.date,
+     startDate: body.startDate,
+     endDate: body.endDate,
+
     time: body.time
   }
 
